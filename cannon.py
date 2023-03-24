@@ -1,3 +1,7 @@
+#Repositorio creado por Othón Berlanga
+#Modificado por Sergio Morales
+#Modificado por Patricio Hernández
+
 from random import randrange
 from turtle import *
 from freegames import vector
@@ -55,12 +59,14 @@ def move():
 
     draw()
 
+    #Las pelotas vuelven al inicio de la pantalla (infinito)
     for target in targets:
         if not inside(target):
-            return
+            target.x = randrange(199,200)
+            target.y = randrange(-150,150)
 
-    ontimer(move, 10)
     #Se cambió el valor de 50 a 10
+    ontimer(move, 10)
 
 setup(420, 420, 370, 0)
 hideturtle()
